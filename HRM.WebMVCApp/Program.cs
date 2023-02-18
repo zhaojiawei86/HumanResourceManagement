@@ -1,7 +1,14 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using HRM.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<HRMDbContext>(option =>
+{
+    option.UseSqlServer(builder.Configuration.GetConnectionString("HrmDb"));
+});
 
 var app = builder.Build();
 
