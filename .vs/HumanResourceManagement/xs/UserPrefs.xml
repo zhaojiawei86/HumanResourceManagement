@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{A7999397-77C5-4C73-B7C4-B7CE7916FCEE}|Default">
+  <MonoDevelop.Ide.ItemProperties.HRM.WebMVCApp FirstBuild="True" PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.HRM.Infrastructure FirstBuild="True" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.HRM.ApplicationCore FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HumanResourceManagement" expanded="True">
+            <Node name="NuGet.Config files" expanded="True">
+              <Node name="~/.nuget/NuGet/NuGet.Config" selected="True" />
+            </Node>
+            <Node name="HRM.ApplicationCore" expanded="True" />
+            <Node name="HRM.Infrastructure" expanded="True" />
+            <Node name="HRM.WebMVCApp" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>
