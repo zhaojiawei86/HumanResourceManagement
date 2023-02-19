@@ -12,6 +12,9 @@
     <None Remove="Contract\" />
     <None Remove="Contract\Service\" />
     <None Remove="Contract\Repository\" />
+    <None Remove="Model\" />
+    <None Remove="Model\Request\" />
+    <None Remove="Model\Response\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.3" />
@@ -21,5 +24,8 @@
     <Folder Include="Contract\" />
     <Folder Include="Contract\Service\" />
     <Folder Include="Contract\Repository\" />
+    <Folder Include="Model\" />
+    <Folder Include="Model\Request\" />
+    <Folder Include="Model\Response\" />
   </ItemGroup>
 </Project>
