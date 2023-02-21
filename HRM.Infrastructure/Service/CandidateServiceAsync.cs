@@ -4,6 +4,7 @@ using HRM.ApplicationCore.Contract.Repository;
 using HRM.ApplicationCore.Contract.Service;
 using HRM.ApplicationCore.Entity;
 using HRM.ApplicationCore.Model.Request;
+using HRM.ApplicationCore.Model.Response;
 
 namespace HRM.Infrastructure.Service
 {
@@ -16,7 +17,8 @@ namespace HRM.Infrastructure.Service
             candidateRepositoryAsync = _candidateRepositoryAsync;
         }
 
-        public async Task<int> AddCandidateAsync(CandidateRequestModel model)
+        // async for insert is not necessory, speed up
+        public Task<int> AddCandidateAsync(CandidateRequestModel model)
         {
             Candidate candidate = new Candidate()
             {
@@ -27,27 +29,66 @@ namespace HRM.Infrastructure.Service
                 currentAddress = model.currentAddress,
                 ResumeUrl = model.ResumeUrl
             };
-            return await candidateRepositoryAsync.InsertAsync(candidate);
+            return candidateRepositoryAsync.InsertAsync(candidate);
         }
 
-        public Task<int> DeleteCandidateAsync(CandidateRequestModel model)
+        public Task<int> DeleteCandidateAsync(int id)
         {
-            throw new NotImplementedException();
+            return candidateRepositoryAsync.DeleteAsync(id);
         }
 
-        public Task<IEnumerable<CandidateRequestModel>> GetAllCandidatesAsync()
+        public async Task<IEnumerable<CandidateResponseModel>> GetAllCandidatesAsync()
         {
-            throw new NotImplementedException();
+            var result = await candidateRepositoryAsync.GetAllAsync();
+            if (result != null)
+            {
+                return result.ToList().Select(x => new CandidateResponseModel()
+                {
+                    Id = x.Id,
+                    FirstName = x.FirstName,
+                    LastName = x.LastName,
+                    Phone = x.Phone,
+                    Email = x.Email,
+                    currentAddress = x.currentAddress,
+                    ResumeUrl = x.ResumeUrl
+                });
+            }
+            return null;
+            
         }
 
-        public Task<CandidateRequestModel> GetCandidateByIdAsync(int id)
+        public async Task<CandidateResponseModel> GetCandidateByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var result = await candidateRepositoryAsync.GetByIdAsync(id);
+            if (result != null)
+            {
+                return new CandidateResponseModel()
+                {
+                    Id = result.Id,
+                    FirstName = result.FirstName,
+                    LastName = result.LastName,
+                    Phone = result.Phone,
+                    Email = result.Email,
+                    currentAddress = result.currentAddress,
+                    ResumeUrl = result.ResumeUrl
+                };
+            }
+            return null;
         }
 
-        public Task<int> UpdateCandidateAsync(CandidateRequestModel model)
+        public async Task<int> UpdateCandidateAsync(CandidateRequestModel model)
         {
-            throw new NotImplementedException();
+            Candidate candidate = new Candidate()
+            {
+                Id = model.Id,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Phone = model.Phone,
+                Email = model.Email,
+                currentAddress = model.currentAddress,
+                ResumeUrl = model.ResumeUrl
+            };
+            return await candidateRepositoryAsync.UpdateAsync(candidate);
         }
     }
 }

@@ -1,43 +1,46 @@
 ﻿<Properties StartupConfiguration="{A7999397-77C5-4C73-B7C4-B7CE7916FCEE}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="HRM.Infrastructure/Migrations/20230218215933_init.cs">
-    <Files>
-      <File FileName="HRM.WebMVCApp/Program.cs" Line="20" Column="18" />
-      <File FileName="HRM.Infrastructure/Data/HRMDbContext.cs" Line="33" Column="1" />
-      <File FileName="HRM.ApplicationCore/Entity/Employee.cs" />
-      <File FileName="HRM.ApplicationCore/Entity/EmployeeRole.cs" />
-      <File FileName="HRM.ApplicationCore/Entity/EmployeeType.cs" />
-      <File FileName="HRM.ApplicationCore/Entity/EmployeeStatus.cs" />
-      <File FileName="HRM.ApplicationCore/Entity/Interview.cs" />
-      <File FileName="HRM.Infrastructure/Migrations/20230218215542_init.cs" Line="369" Column="40" />
-      <File FileName="HRM.Infrastructure/Migrations/HRMDbContextModelSnapshot.cs" Line="1" Column="1" />
-      <File FileName="HRM.Infrastructure/Migrations/20230218215833_init.cs" Line="1" Column="1" />
-      <File FileName="HRM.Infrastructure/Migrations/20230218215833_init.Designer.cs" Line="23" Column="10" />
-      <File FileName="HRM.Infrastructure/Migrations/20230218215933_init.cs" Line="1" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="HumanResourceManagement" expanded="True">
             <Node name="HRM.ApplicationCore" expanded="True">
+              <Node name="Contract" expanded="True">
+                <Node name="Service" expanded="True" />
+              </Node>
               <Node name="Entity" expanded="True" />
-            </Node>
-            <Node name="HRM.Infrastructure" expanded="True">
-              <Node name="Data" expanded="True" />
-              <Node name="Migrations" expanded="True">
-                <Node name="20230218215933_init.cs" selected="True" />
+              <Node name="Model" expanded="True">
+                <Node name="Request" expanded="True" />
+                <Node name="Response" expanded="True" />
               </Node>
             </Node>
-            <Node name="HRM.WebMVCApp" expanded="True" />
+            <Node name="HRM.Infrastructure" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Data" expanded="True" />
+              <Node name="Repository" expanded="True" />
+              <Node name="Service" expanded="True" />
+            </Node>
+            <Node name="HRM.WebMVCApp" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Candidate" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/jiaweizhao/Desktop/antra/assignments/HumanResourceManagement/HRM.WebMVCApp/Controllers/CandidateController.cs" relfile="HRM.WebMVCApp/Controllers/CandidateController.cs" line="23" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.HRM.WebMVCApp PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

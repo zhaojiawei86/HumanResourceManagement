@@ -1,0 +1,32 @@
+﻿@model CandidateResponseModel;
+
+<form asp-controller="Candidate" asp-action="Delete" method="post">
+    <div class="container">
+        <div class="row">
+            <label asp-for="FirstName">First Name: </label>
+            <span>@Model.FirstName</span>
+        </div>
+        <div class="row">
+            <label asp-for="LastName">Last Name: </label>
+            <span>@Model.LastName</span>
+        </div>
+        <div class="row">
+            <label asp-for="Phone">Phone: </label>
+            <span>@Model.Phone</span>
+        </div>
+        <div class="row">
+            <label asp-for="Email">Email: </label>
+            <span>@Model.Email</span>
+        </div>
+        <div class="row">
+            <label asp-for="currentAddress">Current Address: </label>
+            <span>@Model.currentAddress</span>
+        </div>
+        <div class="row">
+            <label asp-for="ResumeUrl">Resume: </label>
+            <span>@Model.ResumeUrl</span>
+        </div>
+        <input type="submit" value="Delete" class="btn btn-danger">
+    </div>
+</form>
+

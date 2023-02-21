@@ -1,0 +1,38 @@
+﻿@model CandidateResponseModel;
+<div class="container">
+    <form asp-controller="Candidate" asp-action="Edit" method="post">
+        <input asp-for="Id" type="hidden"/>
+        <div class="my-5 row col-12">
+            <label for="FirstName">First Name</label>
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="LastName">Last Name</label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="Phone">Phone</label>
+            <input asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="Email">Email</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="currentAddress">Current Address</label>
+            <input asp-for="currentAddress" class="form-control" />
+            <span asp-validation-for="currentAddress"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="ResumeUrl">Resume</label>
+            <input asp-for="ResumeUrl" class="form-control" />
+            <span asp-validation-for="ResumeUrl"></span>
+        </div>
+        <input type="submit" value="Update Candidate" class="btn btn-primary" />
+    </form>
+</div>
+
