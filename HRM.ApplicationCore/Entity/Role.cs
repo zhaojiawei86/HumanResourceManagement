@@ -12,6 +12,6 @@ namespace HRM.ApplicationCore.Entity
         [Column(TypeName = "varchar(100)")]
         public string Name { get; set; }
         [Column(TypeName = "varchar(1000)")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 	}
 }

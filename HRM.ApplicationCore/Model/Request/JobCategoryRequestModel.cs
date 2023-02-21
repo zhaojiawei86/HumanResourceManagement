@@ -3,13 +3,12 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HRM.ApplicationCore.Entity
+namespace HRM.ApplicationCore.Model.Request
 {
-	public class InterviewStatus
+	public class JobCategoryRequestModel
 	{
         public int Id { get; set; }
-        [Required]
-        [Column(TypeName = "varchar(100)")]
+        [Required(ErrorMessage = "Title is required")]
         public string Title { get; set; }
         public bool IsActive { get; set; }
     }
