@@ -4,18 +4,18 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HRM.WebMVCApp.Controllers
 {
-    public class CandidateController : Controller
+    public class InterviewStatusController : Controller
     {
-        private readonly ICandidateServiceAsync candidateServiceAsync;
+        private readonly IInterviewStatusServiceAsync interviewStatusServiceAsync;
 
-        public CandidateController(ICandidateServiceAsync _candidateServiceAsync)
+        public InterviewStatusController(IInterviewStatusServiceAsync _interviewStatusServiceAsync)
         {
-            candidateServiceAsync = _candidateServiceAsync;
+            interviewStatusServiceAsync = _interviewStatusServiceAsync;
         }
         public async Task<IActionResult> Index()
         {
-            var candidateCollection = await candidateServiceAsync.GetAllAsync();
-            return View(candidateCollection);
+            var interviewStatusCollection = await interviewStatusServiceAsync.GetAllAsync();
+            return View(interviewStatusCollection);
         }
 
         public IActionResult Create()
@@ -25,27 +25,27 @@ namespace HRM.WebMVCApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CandidateRequestModel model)
+        public async Task<IActionResult> Create(InterviewStatusRequestModel model)
         {
             if (ModelState.IsValid)
             {
                 // add to db
-                await candidateServiceAsync.AddAsync(model);
+                await interviewStatusServiceAsync.AddAsync(model);
                 return RedirectToAction("Index");
             }
             return View(model);
         }
         public async Task<IActionResult> Edit(int id)
         {
-            var result = await candidateServiceAsync.GetByIdAsync(id);
+            var result = await interviewStatusServiceAsync.GetByIdAsync(id);
             return View(result);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(CandidateRequestModel model)
+        public async Task<IActionResult> Edit(InterviewStatusRequestModel model)
         {
             try
             {
-                await candidateServiceAsync.UpdateAsync(model);
+                await interviewStatusServiceAsync.UpdateAsync(model);
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -56,14 +56,14 @@ namespace HRM.WebMVCApp.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-            var result = await candidateServiceAsync.GetByIdAsync(id);
+            var result = await interviewStatusServiceAsync.GetByIdAsync(id);
             return View(result);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(CandidateRequestModel model)
+        public async Task<IActionResult> Delete(InterviewStatusRequestModel model)
         {
-            await candidateServiceAsync.DeleteAsync(model.Id);
+            await interviewStatusServiceAsync.DeleteAsync(model.Id);
             return RedirectToAction("Index");
 
         }

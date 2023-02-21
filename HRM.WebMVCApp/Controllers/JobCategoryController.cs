@@ -4,18 +4,18 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HRM.WebMVCApp.Controllers
 {
-    public class CandidateController : Controller
+    public class JobCategoryController : Controller
     {
-        private readonly ICandidateServiceAsync candidateServiceAsync;
+        private readonly IJobCategoryServiceAsync jobCategoryServiceAsync;
 
-        public CandidateController(ICandidateServiceAsync _candidateServiceAsync)
+        public JobCategoryController(IJobCategoryServiceAsync _jobCategoryServiceAsync)
         {
-            candidateServiceAsync = _candidateServiceAsync;
+            jobCategoryServiceAsync = _jobCategoryServiceAsync;
         }
         public async Task<IActionResult> Index()
         {
-            var candidateCollection = await candidateServiceAsync.GetAllAsync();
-            return View(candidateCollection);
+            var jobCategoryCollection = await jobCategoryServiceAsync.GetAllAsync();
+            return View(jobCategoryCollection);
         }
 
         public IActionResult Create()
@@ -25,27 +25,27 @@ namespace HRM.WebMVCApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CandidateRequestModel model)
+        public async Task<IActionResult> Create(JobCategoryRequestModel model)
         {
             if (ModelState.IsValid)
             {
                 // add to db
-                await candidateServiceAsync.AddAsync(model);
+                await jobCategoryServiceAsync.AddAsync(model);
                 return RedirectToAction("Index");
             }
             return View(model);
         }
         public async Task<IActionResult> Edit(int id)
         {
-            var result = await candidateServiceAsync.GetByIdAsync(id);
+            var result = await jobCategoryServiceAsync.GetByIdAsync(id);
             return View(result);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(CandidateRequestModel model)
+        public async Task<IActionResult> Edit(JobCategoryRequestModel model)
         {
             try
             {
-                await candidateServiceAsync.UpdateAsync(model);
+                await jobCategoryServiceAsync.UpdateAsync(model);
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -56,14 +56,14 @@ namespace HRM.WebMVCApp.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-            var result = await candidateServiceAsync.GetByIdAsync(id);
+            var result = await jobCategoryServiceAsync.GetByIdAsync(id);
             return View(result);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(CandidateRequestModel model)
+        public async Task<IActionResult> Delete(JobCategoryRequestModel model)
         {
-            await candidateServiceAsync.DeleteAsync(model.Id);
+            await jobCategoryServiceAsync.DeleteAsync(model.Id);
             return RedirectToAction("Index");
 
         }
