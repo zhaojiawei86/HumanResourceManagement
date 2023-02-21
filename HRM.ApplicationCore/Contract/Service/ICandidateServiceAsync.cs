@@ -1,15 +1,16 @@
 ﻿using System;
 using HRM.ApplicationCore.Model.Request;
+using HRM.ApplicationCore.Model.Response;
 
 namespace HRM.ApplicationCore.Contract.Service
 {
 	public interface ICandidateServiceAsync
 	{
 		Task<int> AddCandidateAsync(CandidateRequestModel model);
-		Task<int> DeleteCandidateAsync(CandidateRequestModel model);
+		Task<int> DeleteCandidateAsync(int id);
 		Task<int> UpdateCandidateAsync(CandidateRequestModel model);
-		Task<CandidateRequestModel> GetCandidateByIdAsync(int id);
-		Task<IEnumerable<CandidateRequestModel>> GetAllCandidatesAsync();
+		Task<CandidateResponseModel> GetCandidateByIdAsync(int id);
+		Task<IEnumerable<CandidateResponseModel>> GetAllCandidatesAsync();
 	}
 }
 
