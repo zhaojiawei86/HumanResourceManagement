@@ -5,15 +5,16 @@ using HRM.ApplicationCore.Contract.Service;
 using HRM.ApplicationCore.Entity;
 using HRM.ApplicationCore.Model.Request;
 using HRM.ApplicationCore.Model.Response;
+using HRM.Infrastructure.Repository;
 
 namespace HRM.Infrastructure.Service
 {
-	public class CandidateServiceAsync : ICandidateServiceAsync
-	{
+    public class CandidateServiceAsync : ICandidateServiceAsync
+    {
         private readonly ICandidateRepositoryAsync candidateRepositoryAsync;
 
         public CandidateServiceAsync(ICandidateRepositoryAsync _candidateRepositoryAsync)
-		{
+        {
             candidateRepositoryAsync = _candidateRepositoryAsync;
         }
 
@@ -54,7 +55,7 @@ namespace HRM.Infrastructure.Service
                 });
             }
             return null;
-            
+
         }
 
         public async Task<CandidateResponseModel> GetByIdAsync(int id)
@@ -92,4 +93,3 @@ namespace HRM.Infrastructure.Service
         }
     }
 }
-

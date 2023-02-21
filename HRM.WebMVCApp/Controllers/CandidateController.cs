@@ -6,9 +6,9 @@ namespace HRM.WebMVCApp.Controllers
 {
     public class CandidateController : Controller
     {
-        private readonly ICandidateServiceAsync candidateServiceAsync;
+        private readonly IRoleServiceAsync candidateServiceAsync;
 
-        public CandidateController(ICandidateServiceAsync _candidateServiceAsync)
+        public CandidateController(IRoleServiceAsync _candidateServiceAsync)
         {
             candidateServiceAsync = _candidateServiceAsync;
         }
