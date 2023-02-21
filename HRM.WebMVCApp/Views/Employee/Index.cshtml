@@ -1,0 +1,53 @@
+﻿@model IEnumerable<EmployeeResponseModel>;
+<div class="page-header">
+    <h1>List of Employees</h1>
+</div>
+<a asp-controller="Employee" asp-action="Create">Add New Employees</a>
+
+<table class="table table-bordered table-striped table hovered">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Current Address</th>
+            <th>SSN</th>
+            <th>DOB</th>
+            <th>Hire Date</th>
+            <th>EmployeeRole Id</th>
+            <th>EmployeeType Id</th>
+            <th>End Date</th>
+            <th>EmployeeStatus Id</th>
+            <th>Manager Id</th>
+            <th colspan="2">Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var m in Model)
+            {
+                <tr>
+                    <td>@m.FirstName</td>
+                    <td>@m.LastName</td>
+                    <td>@m.Phone</td>
+                    <td>@m.EmailId</td>
+                    <td>@m.CurrentAddress</td>
+                    <td>@m.DOB</td>
+                    <td>@m.SSN</td>
+                    <td>@m.DOB</td>
+                    <td>@m.HireDate</td>
+                    <td>@m.EmployeeRoleId</td>
+                    <td>@m.EmployeeTypeId</td>
+                    <td>@m.EndDate</td>
+                    <td>@m.EmployeeStatusId</td>
+                    <td>@m.ManagerId</td>
+                    <td><a asp-controller="Employee" asp-action="Edit" asp-route-id="@m.Id">Edit</a></td>
+                    <td><a asp-controller="Employee" asp-action="Delete" asp-route-id="@m.Id">Delete</a></td>
+
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
