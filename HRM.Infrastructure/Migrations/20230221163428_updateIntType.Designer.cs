@@ -4,6 +4,7 @@ using HRM.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HRM.Infrastructure.Migrations
 {
     [DbContext(typeof(HRMDbContext))]
-    partial class HRMDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230221163428_updateIntType")]
+    partial class updateIntType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -138,6 +141,7 @@ namespace HRM.Infrastructure.Migrations
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("description")
+                        .IsRequired()
                         .HasColumnType("varchar(1000)");
 
                     b.HasKey("Id");
@@ -161,6 +165,7 @@ namespace HRM.Infrastructure.Migrations
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("description")
+                        .IsRequired()
                         .HasColumnType("varchar(1000)");
 
                     b.HasKey("Id");
@@ -184,6 +189,7 @@ namespace HRM.Infrastructure.Migrations
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("description")
+                        .IsRequired()
                         .HasColumnType("varchar(1000)");
 
                     b.HasKey("Id");
@@ -265,7 +271,7 @@ namespace HRM.Infrastructure.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -363,6 +369,7 @@ namespace HRM.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("varchar(1000)");
 
                     b.Property<string>("Name")

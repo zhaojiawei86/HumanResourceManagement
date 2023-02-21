@@ -1,14 +1,22 @@
 ﻿<Properties StartupConfiguration="{A7999397-77C5-4C73-B7C4-B7CE7916FCEE}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="HRM.WebMVCApp/Views/Candidate/Delete.cshtml">
+    <Files>
+      <File FileName="HRM.WebMVCApp/Views/Candidate/Edit.cshtml" Line="1" Column="1" IsPinned="True" />
+      <File FileName="HRM.WebMVCApp/Controllers/CandidateController.cs" Line="71" Column="2" />
+      <File FileName="HRM.WebMVCApp/Views/Candidate/Delete.cshtml" Line="21" Column="26" />
+      <File FileName="HRM.WebMVCApp/Controllers/EmployeeController.cs" Line="57" Column="33" NotebookId="1" />
+      <File FileName="HRM.Infrastructure/Service/EmployeeServiceAsync.cs" Line="67" Column="48" NotebookId="1" />
+      <File FileName="HRM.WebMVCApp/Views/Employee/Delete.cshtml" Line="48" Column="15" NotebookId="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="HumanResourceManagement" expanded="True">
             <Node name="HRM.ApplicationCore" expanded="True">
               <Node name="Contract" expanded="True">
+                <Node name="Repository" expanded="True" />
                 <Node name="Service" expanded="True" />
               </Node>
-              <Node name="Entity" expanded="True" />
               <Node name="Model" expanded="True">
                 <Node name="Request" expanded="True" />
                 <Node name="Response" expanded="True" />
@@ -26,7 +34,10 @@
               <Node name="Controllers" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Candidate" expanded="True" />
-                <Node name="Shared" expanded="True" />
+                <Node name="Employee" expanded="True" />
+                <Node name="Shared" expanded="True">
+                  <Node name="_Layout.cshtml" expanded="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -34,13 +45,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/jiaweizhao/Desktop/antra/assignments/HumanResourceManagement/HRM.WebMVCApp/Controllers/CandidateController.cs" relfile="HRM.WebMVCApp/Controllers/CandidateController.cs" line="23" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.HRM.WebMVCApp PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

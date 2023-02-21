@@ -1,16 +1,16 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
-namespace HRM.ApplicationCore.Entity
+namespace HRM.ApplicationCore.Model.Request
 {
-	public class InterviewStatus
-	{
+	public class EmployeeStatusRequestModel
+    {
         public int Id { get; set; }
-        [Required]
-        [Column(TypeName = "varchar(100)")]
+        [Required(ErrorMessage = "Title is required")]
         public string Title { get; set; }
+        public string? description { get; set; }
         public bool IsActive { get; set; }
     }
 }
