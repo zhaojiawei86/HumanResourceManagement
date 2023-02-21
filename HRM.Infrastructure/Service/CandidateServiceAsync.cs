@@ -18,7 +18,7 @@ namespace HRM.Infrastructure.Service
         }
 
         // async for insert is not necessory, speed up
-        public Task<int> AddCandidateAsync(CandidateRequestModel model)
+        public Task<int> AddAsync(CandidateRequestModel model)
         {
             Candidate candidate = new Candidate()
             {
@@ -32,12 +32,12 @@ namespace HRM.Infrastructure.Service
             return candidateRepositoryAsync.InsertAsync(candidate);
         }
 
-        public Task<int> DeleteCandidateAsync(int id)
+        public Task<int> DeleteAsync(int id)
         {
             return candidateRepositoryAsync.DeleteAsync(id);
         }
 
-        public async Task<IEnumerable<CandidateResponseModel>> GetAllCandidatesAsync()
+        public async Task<IEnumerable<CandidateResponseModel>> GetAllAsync()
         {
             var result = await candidateRepositoryAsync.GetAllAsync();
             if (result != null)
@@ -57,7 +57,7 @@ namespace HRM.Infrastructure.Service
             
         }
 
-        public async Task<CandidateResponseModel> GetCandidateByIdAsync(int id)
+        public async Task<CandidateResponseModel> GetByIdAsync(int id)
         {
             var result = await candidateRepositoryAsync.GetByIdAsync(id);
             if (result != null)
@@ -76,7 +76,7 @@ namespace HRM.Infrastructure.Service
             return null;
         }
 
-        public async Task<int> UpdateCandidateAsync(CandidateRequestModel model)
+        public async Task<int> UpdateAsync(CandidateRequestModel model)
         {
             Candidate candidate = new Candidate()
             {

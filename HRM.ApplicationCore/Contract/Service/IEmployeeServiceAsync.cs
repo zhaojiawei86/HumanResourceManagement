@@ -4,8 +4,8 @@ using HRM.ApplicationCore.Model.Response;
 
 namespace HRM.ApplicationCore.Contract.Service
 {
-	public interface ICandidateServiceAsync : IServiceAsync<CandidateRequestModel, CandidateResponseModel>
-    {
+	public interface IEmployeeServiceAsync : IServiceAsync<EmployeeRequestModel, EmployeeResponseModel>
+	{
 	}
 }
 

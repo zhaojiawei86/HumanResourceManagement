@@ -1,0 +1,48 @@
+﻿@model EmployeeResponseModel;
+
+<form asp-controller="Candidate" asp-action="Delete" method="post">
+    <div class="container">
+        <div class="row">
+            <label asp-for="FirstName">First Name: </label>
+            <span>@Model.FirstName</span>
+        </div>
+        <div class="row">
+            <label asp-for="LastName">Last Name: </label>
+            <span>@Model.LastName</span>
+        </div>
+        <div class="row">
+            <label asp-for="Phone">Phone: </label>
+            <span>@Model.Phone</span>
+        </div>
+        <div class="row">
+            <label asp-for="EmailId">Email: </label>
+            <span>@Model.EmailId</span>
+        </div>
+        <div class="row">
+            <label asp-for="CurrentAddress">Current Address: </label>
+            <span>@Model.CurrentAddress</span>
+        </div>
+        <div class="row">
+            <label asp-for="DOB">DOB: </label>
+            <span>@Model.DOB</span>
+        </div>
+        <div class="row">
+            <label asp-for="SSN">SSN: </label>
+            <span>@Model.SSN</span>
+        </div>
+        <div class="row">
+            <label asp-for="HireDate">Hire Date: </label>
+            <span>@Model.HireDate</span>
+        </div>
+        <div class="row">
+            <label asp-for="EndDate">End Date: </label>
+            <span>@Model.EndDate</span>
+        </div>
+        <div class="row">
+            <label asp-for="ManagerId">Manager Id: </label>
+            <span>@Model.ManagerId</span>
+        </div>
+        <input type="submit" value="Delete" class="btn btn-danger">
+    </div>
+</form>
+              

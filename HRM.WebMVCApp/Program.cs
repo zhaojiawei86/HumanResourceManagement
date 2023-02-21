@@ -14,11 +14,16 @@ builder.Services.AddDbContext<HRMDbContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("HrmDb"));
 });
 
+
 // Dependency injection for repositories
 builder.Services.AddScoped<ICandidateRepositoryAsync, CandidateRepositoryAsync>();
+builder.Services.AddScoped<IEmployeeRepositoryAsync, EmployeeRepositoryAsync>();
+
 
 // Dependency injection for services
 builder.Services.AddScoped<ICandidateServiceAsync, CandidateServiceAsync>();
+builder.Services.AddScoped<IEmployeeServiceAsync, EmployeeServiceAsync>();
+
 
 var app = builder.Build();
 
