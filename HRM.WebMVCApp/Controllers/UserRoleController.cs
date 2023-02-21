@@ -4,18 +4,18 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HRM.WebMVCApp.Controllers
 {
-    public class CandidateController : Controller
+    public class UserRoleController : Controller
     {
-        private readonly ICandidateServiceAsync candidateServiceAsync;
+        private readonly IUserRoleServiceAsync userRoleServiceAsync;
 
-        public CandidateController(ICandidateServiceAsync _candidateServiceAsync)
+        public UserRoleController(IUserRoleServiceAsync _userRoleServiceAsync)
         {
-            candidateServiceAsync = _candidateServiceAsync;
+            userRoleServiceAsync = _userRoleServiceAsync;
         }
         public async Task<IActionResult> Index()
         {
-            var candidateCollection = await candidateServiceAsync.GetAllAsync();
-            return View(candidateCollection);
+            var userRoleCollection = await userRoleServiceAsync.GetAllAsync();
+            return View(userRoleCollection);
         }
 
         public IActionResult Create()
@@ -25,27 +25,27 @@ namespace HRM.WebMVCApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CandidateRequestModel model)
+        public async Task<IActionResult> Create(UserRoleRequestModel model)
         {
             if (ModelState.IsValid)
             {
                 // add to db
-                await candidateServiceAsync.AddAsync(model);
+                await userRoleServiceAsync.AddAsync(model);
                 return RedirectToAction("Index");
             }
             return View(model);
         }
         public async Task<IActionResult> Edit(int id)
         {
-            var result = await candidateServiceAsync.GetByIdAsync(id);
+            var result = await userRoleServiceAsync.GetByIdAsync(id);
             return View(result);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(CandidateRequestModel model)
+        public async Task<IActionResult> Edit(UserRoleRequestModel model)
         {
             try
             {
-                await candidateServiceAsync.UpdateAsync(model);
+                await userRoleServiceAsync.UpdateAsync(model);
                 return RedirectToAction("Index");
             }
             catch (Exception ex)
@@ -56,14 +56,14 @@ namespace HRM.WebMVCApp.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-            var result = await candidateServiceAsync.GetByIdAsync(id);
+            var result = await userRoleServiceAsync.GetByIdAsync(id);
             return View(result);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(CandidateRequestModel model)
+        public async Task<IActionResult> Delete(UserRoleRequestModel model)
         {
-            await candidateServiceAsync.DeleteAsync(model.Id);
+            await userRoleServiceAsync.DeleteAsync(model.Id);
             return RedirectToAction("Index");
 
         }
