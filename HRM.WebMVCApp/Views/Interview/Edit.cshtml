@@ -1,0 +1,38 @@
+﻿@model InterviewResponseModel;
+<div class="container">
+    <form asp-controller="Interview" asp-action="Edit" method="post">
+        <input asp-for="Id" type="hidden" />
+        <div class="my-5 row col-12">
+            <label for="SubmissionId">SubmissionId</label>
+            <select class="form-control" asp-for="SubmissionId" asp-items="@ViewBag.SubmissionList"></select>
+            <span asp-validation-for="SubmissionId"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="InterviewDate">InterviewDate</label>
+            <input asp-for="InterviewDate" class="form-control" />
+            <span asp-validation-for="InterviewDate"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="InterviewRound">InterviewRound</label>
+            <input asp-for="InterviewRound" class="form-control" />
+            <span asp-validation-for="InterviewRound"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="InterviewTypeId">InterviewTypeId</label>
+            <select class="form-control" asp-for="InterviewTypeId" asp-items="@ViewBag.InterviewTypeList"></select>
+            <span asp-validation-for="InterviewTypeId"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="InterviewStatusId">InterviewStatusId</label>
+            <select class="form-control" asp-for="InterviewStatusId" asp-items="@ViewBag.InterviewStatusList"></select>
+            <span asp-validation-for="SubmissionId"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="InterviewerId">InterviewerId</label>
+            <select class="form-control" asp-for="InterviewerId" asp-items="@ViewBag.EmployeeList"></select>
+            <span asp-validation-for="InterviewerId"></span>
+        </div>
+        <input type="submit" value="Update Interview" class="btn btn-primary" />
+    </form>
+</div>
+

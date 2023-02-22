@@ -1,0 +1,43 @@
+﻿@model IEnumerable<JobRequirmentResponseModel>;
+<div class="page-header">
+    <h1>List of JobRequirements</h1>
+</div>
+<a asp-controller="JobRequirement" asp-action="Create">Add New JobRequirement</a>
+
+<table class="table table-bordered table-striped table hovered">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Job Location</th>
+            <th>NoOfPosition</th>
+            <th>PostingDate</th>
+            <th>ClosingDate</th>
+            <th>IsActive</th>
+            <th>Description</th>
+            <th>JobCategoryId</th>
+
+            <th colspan="2">Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach(var m in Model)
+            {
+                <tr>
+                    <td>@m.Title</td>
+                    <td>@m.JobLocation</td>
+                    <td>@m.NoOfPosition</td>
+                    <td>@m.PostingDate</td>
+                    <td>@m.ClosingDate</td>
+                    <td>@m.IsActive</td>
+                    <td>@m.Description</td>
+                    <td>@m.JobCategoryId</td>
+
+                    <td><a asp-controller="JobRequirement" asp-action="Edit" asp-route-id="@m.Id">Edit</a></td>
+                    <td><a asp-controller="JobRequirement" asp-action="Delete" asp-route-id="@m.Id">Delete</a></td>
+
+                </tr>
+            }
+        }
+    </tbody>
+</table>

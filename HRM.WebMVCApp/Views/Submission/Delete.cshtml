@@ -1,0 +1,20 @@
+﻿@model SubmissionResponseModel;
+
+<form asp-controller="Submission" asp-action="Delete" method="post">
+    <div class="container">
+        <div class="row">
+            <label asp-for="CandidateId">CandidateId: </label>
+            <span>@Model.CandidateId</span>
+        </div>
+        <div class="row">
+            <label asp-for="JobRequirementId">JobRequirementId: </label>
+            <span>@Model.JobRequirementId</span>
+        </div>
+        <div class="row">
+            <label asp-for="AppliedDate">AppliedDate: </label>
+            <span>@Model.AppliedDate</span>
+        </div>
+        <input type="submit" value="Delete" class="btn btn-danger">
+    </div>
+</form>
+
