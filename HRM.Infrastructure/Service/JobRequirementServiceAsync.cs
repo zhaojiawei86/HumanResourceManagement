@@ -47,6 +47,7 @@ namespace HRM.Infrastructure.Service
                 return result.ToList().Select(x => new JobRequirmentResponseModel()
                 {
                     Id = x.Id,
+                    Title = x.Title,
                     JobLocation = x.JobLocation,
                     NoOfPosition = x.NoOfPosition,
                     PostingDate = x.PostingDate,
@@ -68,6 +69,7 @@ namespace HRM.Infrastructure.Service
                 return new JobRequirmentResponseModel()
                 {
                     Id = result.Id,
+                    Title = result.Title,
                     JobLocation = result.JobLocation,
                     NoOfPosition = result.NoOfPosition,
                     PostingDate = result.PostingDate,

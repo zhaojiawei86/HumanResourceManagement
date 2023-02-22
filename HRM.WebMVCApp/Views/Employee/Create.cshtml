@@ -44,12 +44,12 @@
         </div>
         <div class="my-5 row col-12">
             <label for="EmployeeRoleId">EmployeeRole Id</label>
-            <input asp-for="EmployeeRoleId" class="form-control" />
+            <select class="form-control" asp-for="EmployeeRoleId" asp-items=@ViewBag.EmployeeRoleList></select>
             <span asp-validation-for="EmployeeRoleId"></span>
         </div>
         <div class="my-5 row col-12">
             <label for="EmployeeTypeId">EmployeeType Id</label>
-            <input asp-for="EmployeeTypeId" class="form-control" />
+            <select class="form-control" asp-for="EmployeeTypeId" asp-items=@ViewBag.EmployeeTypeList></select>
             <span asp-validation-for="EmployeeTypeId"></span>
         </div>
         <div class="my-5 row col-12">
@@ -59,12 +59,12 @@
         </div>
         <div class="my-5 row col-12">
             <label for="EmployeeStatusId">EmployeeStatus Id</label>
-            <input asp-for="EmployeeStatusId" class="form-control" />
+            <select class="form-control" asp-for="EmployeeStatusId" asp-items=@ViewBag.EmployeeStatusList></select>
             <span asp-validation-for="EmployeeStatusId"></span>
         </div>
         <div class="my-5 row col-12">
             <label for="ManagerId">Manager Id</label>
-            <input asp-for="ManagerId" class="form-control" />
+            <select class="form-control" asp-for="ManagerId" asp-items=@ViewBag.EmployeeList></select>
             <span asp-validation-for="ManagerId"></span>
         </div>
 

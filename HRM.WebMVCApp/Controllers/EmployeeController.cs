@@ -2,16 +2,27 @@
 using HRM.ApplicationCore.Contract.Service;
 using HRM.ApplicationCore.Model.Request;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace HRM.WebMVCApp.Controllers
 {
 	public class EmployeeController : Controller
     {
         private readonly IEmployeeServiceAsync employeeServiceAsync;
+        private readonly IEmployeeRoleServiceAsync employeeRoleServiceAsync;
+        private readonly IEmployeeTypeServiceAsync employeeTypeServiceAsync;
+        private readonly IEmployeeStatusServiceAsync employeeStatusServiceAsync;
 
-        public EmployeeController(IEmployeeServiceAsync _employeeServiceAsync)
+        public EmployeeController(IEmployeeServiceAsync _employeeServiceAsync,
+                                  IEmployeeRoleServiceAsync employeeRoleServiceAsync,
+                                  IEmployeeTypeServiceAsync employeeTypeServiceAsync,
+                                  IEmployeeStatusServiceAsync employeeStatusServiceAsync)
         {
             employeeServiceAsync = _employeeServiceAsync;
+            this.employeeRoleServiceAsync = employeeRoleServiceAsync;
+            this.employeeTypeServiceAsync = employeeTypeServiceAsync;
+            this.employeeStatusServiceAsync = employeeStatusServiceAsync;
         }
         public async Task<IActionResult> Index()
         {
@@ -19,8 +30,12 @@ namespace HRM.WebMVCApp.Controllers
             return View(employeeCollection);
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            ViewBag.EmployeeRoleList = new SelectList(await employeeRoleServiceAsync.GetAllAsync(), "Id", "Title");
+            ViewBag.EmployeeTypeList = new SelectList(await employeeTypeServiceAsync.GetAllAsync(), "Id", "Title");
+            ViewBag.EmployeeStatusList = new SelectList(await employeeStatusServiceAsync.GetAllAsync(), "Id", "Title");
+            ViewBag.EmployeeList = new SelectList(await employeeServiceAsync.GetAllAsync(), "Id", "FirstName");
             return View();
         }
 
@@ -37,12 +52,17 @@ namespace HRM.WebMVCApp.Controllers
         }
         public async Task<IActionResult> Edit(int id)
         {
+            ViewBag.EmployeeRoleList = new SelectList(await employeeRoleServiceAsync.GetAllAsync(), "Id", "Title");
+            ViewBag.EmployeeTypeList = new SelectList(await employeeTypeServiceAsync.GetAllAsync(), "Id", "Title");
+            ViewBag.EmployeeStatusList = new SelectList(await employeeStatusServiceAsync.GetAllAsync(), "Id", "Title");
+            ViewBag.EmployeeList = new SelectList(await employeeServiceAsync.GetAllAsync(), "Id", "FirstName");
             var result = await employeeServiceAsync.GetByIdAsync(id);
             return View(result);
         }
         [HttpPost]
         public async Task<IActionResult> Edit(EmployeeRequestModel model)
         {
+
             try
             {
                 await employeeServiceAsync.UpdateAsync(model);

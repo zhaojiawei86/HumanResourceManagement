@@ -19,6 +19,7 @@
     <None Remove="Microsoft.EntityFrameworkCore.Tools" />
     <None Remove="Views\Candidate\" />
     <None Remove="Views\Employee\" />
+    <None Remove="Views\Candidate %28copy%29\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.3" />
@@ -30,5 +31,7 @@
   <ItemGroup>
     <Folder Include="Views\Candidate\" />
     <Folder Include="Views\Employee\" />
+    <Folder Include="Views\JobCategory\" />
+    <Folder Include="Views\Interview\" />
   </ItemGroup>
 </Project>
