@@ -1,0 +1,29 @@
+﻿@model IEnumerable<FeedbackResponseModel>;
+<div class="page-header">
+    <h1>List of Feedbacks</h1>
+</div>
+<a asp-controller="Feedback" asp-action="Create">Add New Feedback</a>
+
+<table class="table table-bordered table-striped table hovered">
+    <thead>
+        <tr>
+            <th>InterviewId</th>
+            <th>Description</th>
+            <th colspan="2">Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach(var m in Model)
+            {
+                <tr>
+                    <td>@m.InterviewId</td>
+                    <td>@m.Description</td>
+                    <td><a asp-controller="Feedback" asp-action="Edit" asp-route-id="@m.Id">Edit</a></td>
+                    <td><a asp-controller="Feedback" asp-action="Delete" asp-route-id="@m.Id">Delete</a></td>
+
+                </tr>
+            }
+        }
+    </tbody>
+</table>

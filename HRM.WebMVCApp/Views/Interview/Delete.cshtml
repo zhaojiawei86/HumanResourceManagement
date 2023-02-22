@@ -1,0 +1,32 @@
+﻿@model InterviewResponseModel;
+
+<form asp-controller="Interview" asp-action="Delete" method="post">
+    <div class="container">
+        <div class="row">
+            <label asp-for="SubmissionId">SubmissionId: </label>
+            <span>@Model.SubmissionId</span>
+        </div>
+        <div class="row">
+            <label asp-for="InterviewDate">InterviewDate: </label>
+            <span>@Model.InterviewDate</span>
+        </div>
+        <div class="row">
+            <label asp-for="InterviewRound">InterviewRound: </label>
+            <span>@Model.InterviewRound</span>
+        </div>
+        <div class="row">
+            <label asp-for="InterviewTypeId">InterviewTypeId: </label>
+            <span>@Model.InterviewTypeId</span>
+        </div>
+        <div class="row">
+            <label asp-for="InterviewStatusId">InterviewStatusId: </label>
+            <span>@Model.InterviewStatusId</span>
+        </div>
+        <div class="row">
+            <label asp-for="InterviewerId">InterviewerId: </label>
+            <span>@Model.InterviewerId</span>
+        </div>
+        <input type="submit" value="Delete" class="btn btn-danger">
+    </div>
+</form>
+

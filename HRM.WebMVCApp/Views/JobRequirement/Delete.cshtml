@@ -1,0 +1,40 @@
+﻿@model JobRequirmentResponseModel;
+
+<form asp-controller="JobRequirement" asp-action="Delete" method="post">
+    <div class="container">
+        <div class="row">
+            <label asp-for="Title">Title: </label>
+            <span>@Model.Title</span>
+        </div>
+        <div class="row">
+            <label asp-for="JobLocation">JobLocation: </label>
+            <span>@Model.JobLocation</span>
+        </div>
+        <div class="row">
+            <label asp-for="NoOfPosition">NoOfPosition: </label>
+            <span>@Model.NoOfPosition</span>
+        </div>
+        <div class="row">
+            <label asp-for="PostingDate">PostingDate: </label>
+            <span>@Model.PostingDate</span>
+        </div>
+        <div class="row">
+            <label asp-for="ClosingDate">ClosingDate: </label>
+            <span>@Model.ClosingDate</span>
+        </div>
+        <div class="row">
+            <label asp-for="IsActive">IsActive: </label>
+            <span>@Model.IsActive</span>
+        </div>
+        <div class="row">
+            <label asp-for="Description">Description: </label>
+            <span>@Model.Description</span>
+        </div>
+        <div class="row">
+            <label asp-for="JobCategoryId">JobCategoryId: </label>
+            <span>@Model.JobCategoryId</span>
+        </div>
+        <input type="submit" value="Delete" class="btn btn-danger">
+    </div>
+</form>
+

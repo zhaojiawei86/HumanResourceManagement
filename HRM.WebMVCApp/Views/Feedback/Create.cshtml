@@ -1,0 +1,16 @@
+﻿@model FeedbackRequestModel;
+<div class="container">
+    <form asp-controller="Feedback" asp-action="Create" method="post">
+        <div class="my-5 row col-12">
+            <label for="InterviewId">InterviewId</label>
+            <select class="form-control" asp-for="InterviewId" asp-items="@ViewBag.InterviewList"></select>
+            <span asp-validation-for="InterviewId"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="Description">Description</label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description"></span>
+        </div>
+        <input type="submit" value="Add Feedback" class="btn btn-primary" />
+    </form>
+</div>

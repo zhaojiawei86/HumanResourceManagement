@@ -1,0 +1,20 @@
+﻿@model EmployeeRoleResponseModel;
+
+<form asp-controller="EmployeeRole" asp-action="Delete" method="post">
+    <div class="container">
+        <div class="row">
+            <label asp-for="Title">Title: </label>
+            <span>@Model.Title</span>
+        </div>
+        <div class="row">
+            <label asp-for="description">Description: </label>
+            <span>@Model.description</span>
+        </div>
+        <div class="row">
+            <label asp-for="IsActive">IsActive: </label>
+            <span>@Model.IsActive</span>
+        </div>
+        <input type="submit" value="Delete" class="btn btn-danger">
+    </div>
+</form>
+
