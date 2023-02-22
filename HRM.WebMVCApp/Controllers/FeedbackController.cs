@@ -1,16 +1,20 @@
 ﻿using HRM.ApplicationCore.Contract.Service;
 using HRM.ApplicationCore.Model.Request;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HRM.WebMVCApp.Controllers
 {
     public class FeedbackController : Controller
     {
         private readonly IFeedbackServiceAsync feedbackServiceAsync;
+        private readonly IInterviewServiceAsync interviewServiceAsync;
 
-        public FeedbackController(IFeedbackServiceAsync _feedbackServiceAsync)
+        public FeedbackController(IFeedbackServiceAsync _feedbackServiceAsync,
+                                    IInterviewServiceAsync _interviewServiceAsync)
         {
             feedbackServiceAsync = _feedbackServiceAsync;
+            interviewServiceAsync = _interviewServiceAsync;
         }
         public async Task<IActionResult> Index()
         {
@@ -18,9 +22,10 @@ namespace HRM.WebMVCApp.Controllers
             return View(feedbackCollection);
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
 
         {
+            ViewBag.InterviewList = new SelectList(await interviewServiceAsync.GetAllAsync(), "Id", "Id");
             return View();
         }
 
@@ -37,6 +42,7 @@ namespace HRM.WebMVCApp.Controllers
         }
         public async Task<IActionResult> Edit(int id)
         {
+            ViewBag.InterviewList = new SelectList(await interviewServiceAsync.GetAllAsync(), "Id", "Id");
             var result = await feedbackServiceAsync.GetByIdAsync(id);
             return View(result);
         }
